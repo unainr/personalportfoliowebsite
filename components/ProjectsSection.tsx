@@ -19,12 +19,12 @@ export function ProjectsSection({ project }: { project: Project }) {
 		<div
 			id="projects"
 			className="group relative  rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
-			<div className="relative h-56 overflow-hidden">
+			<div className="relative h-80 overflow-hidden">
 				<Image
 					src={images[0]}
 					alt={name}
 					fill
-					className="object-cover group-hover:scale-110 transition-transform duration-500"
+					className="object-cover  transition-transform duration-500"
 					quality={90}
 				/>
 				<div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
