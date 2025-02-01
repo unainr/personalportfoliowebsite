@@ -39,7 +39,7 @@ export default async function Home() {
 						<div
 							id="portfolio"
 							className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-							{projects.map((project: any) => (
+							{projects.slice(0, 6).map((project: any) => (
 								<ProjectsSection key={project._id} project={project} />
 							))}
 						</div>
@@ -69,3 +69,5 @@ export default async function Home() {
 		</>
 	);
 }
+
+export const revalidate = 60;
