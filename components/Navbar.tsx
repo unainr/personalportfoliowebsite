@@ -25,11 +25,9 @@ const Navbar = () => {
 				<div className="flex items-center justify-between h-16">
 					{/* Logo */}
 					<div className="flex items-center">
-						<button
-							onClick={() => scrollToSection("home")}
-							className="text-2xl font-bold">
+					<Link href="/" className="text-2xl font-bold">
 							<span className="font-black flex items-center gap-1">
-								<span className="dark:text-gray-500">{"</>"}</span>
+								<span className=" dark:text-gray-500">{"</>"}</span>
 								<span>
 									<span className="text-gray-900 dark:text-white">Port</span>
 									<span className="bg-clip-text text-transparent bg-gradient-to-r from-[#CBACF9] to-[#B794F4]">
@@ -37,7 +35,7 @@ const Navbar = () => {
 									</span>
 								</span>
 							</span>
-						</button>
+						</Link>
 					</div>
 
 					{/* Desktop Navigation */}

@@ -16,7 +16,8 @@ export function ProjectsSection({ project }: { project: Project }) {
 	const { name, description, images, projectLink } = project;
 
 	return (
-		<div id="projects"
+		<div
+			id="projects"
 			className="group relative  rounded-xl overflow-hidden hover:transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-2xl">
 			<div className="relative h-56 overflow-hidden">
 				<Image
@@ -33,12 +34,13 @@ export function ProjectsSection({ project }: { project: Project }) {
 				<h3 className="text-2xl font-bold mb-3 bg-gradient-to-r from-purple-400 bg-clip-text text-transparent">
 					{name}
 				</h3>
-				<p className=" mb-4 line-clamp-3">{description}</p>
+				<p className=" mb-4 line-clamp-3">
+					{description.length > 120
+						? `${description.substring(0, 120)}...`
+						: description}
+				</p>
 				<Link href={projectLink} target="_blank" rel="noopener noreferrer">
-					<Button
-						className="bg-gradient-to-r from-[#6a5983] to-[#7f5db8] text-white px-6 py-2
-   
-   ">
+					<Button className="bg-gradient-to-r from-[#6a5983] to-[#7f5db8] text-white px-6 py-2">
 						View Project
 					</Button>
 				</Link>
