@@ -1,4 +1,3 @@
-import { ProjectsSection } from "@/components/ProjectsSection";
 import { SkillsSection } from "@/components/SkillsSection";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { PROJECT_FETCH_QUERY } from "@/sanity/lib/queries";
@@ -9,6 +8,7 @@ import { AnimatedTestimonialsDemo } from "@/components/TestimonialsSection";
 import ContactForm from "@/components/ContactForm";
 import { AboutSection } from "@/components/About";
 import Link from "next/link";
+import { ThreeDCardDemo } from "@/components/MainThirdCard";
 export default async function Home() {
 	const projects = await client.fetch(PROJECT_FETCH_QUERY);
 	return (
@@ -38,9 +38,11 @@ export default async function Home() {
 
 						<div
 							id="portfolio"
-							className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
+							className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 w-full max-w-6xl mx-auto">
 							{projects.slice(0, 6).map((project: any) => (
-								<ProjectsSection key={project._id} project={project} />
+								<div key={project._id} className="w-full h-full flex flex-col">
+									<ThreeDCardDemo project={project} />
+								</div>
 							))}
 						</div>
 

@@ -2,7 +2,7 @@ import React from 'react'
 import { PROJECT_FETCH_QUERY } from "@/sanity/lib/queries";
 import { client } from "@/sanity/lib/client";
 import { ProjectsSection } from "@/components/ProjectsSection";
-
+import { ThreeDCardDemo } from "@/components/MainThirdCard";
 
 const ProjectPage = async () => {
 	const projects = await client.fetch(PROJECT_FETCH_QUERY);
@@ -30,12 +30,14 @@ const ProjectPage = async () => {
                 </div>
     
                 <div
-                  id="portfolio"
-                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-6">
-                  {projects.map((project: any) => (
-                    <ProjectsSection key={project._id} project={project} />
-                  ))}
-                </div>
+							id="portfolio"
+							className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-8 w-full max-w-6xl mx-auto">
+							{projects.map((project: any) => (
+								<div key={project._id} className="w-full h-full flex flex-col">
+									<ThreeDCardDemo project={project} />
+								</div>
+							))}
+						</div>
               </div>
             </section>
           ) : (
