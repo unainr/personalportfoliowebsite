@@ -28,7 +28,7 @@ export function AboutSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           {[
             //{ icon: FaCode, title: "Experience", value: "2+ Years", delay: 0.4 },
             { icon: FaProjectDiagram, title: "Projects", value: "30+ Completed", delay: 0.6 },
