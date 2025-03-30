@@ -93,7 +93,7 @@ export function AuroraBackgroundDemo() {
 							</Button>
 						</Link>
 
-						<Link href={"/resume.pdf"} target="_blank">
+						<Link href={"/resumem.pdf"} target="_blank">
 							<Button
 								className="bg-transparent border-2 border-[#CBACF9] text-[#CBACF9]
                 uppercase px-8 py-4 rounded-full shadow-lg
