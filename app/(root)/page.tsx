@@ -9,11 +9,13 @@ import ContactForm from "@/components/ContactForm";
 import { AboutSection } from "@/components/About";
 import Link from "next/link";
 import { ThreeDCardDemo } from "@/components/MainThirdCard";
+import { SpotlightNewDemo } from "@/components/SpotlightDemo";
 export default async function Home() {
 	const projects = await client.fetch(PROJECT_FETCH_QUERY);
 	return (
 		<>
 			<AuroraBackgroundDemo />
+			{/* <SpotlightNewDemo/> */}
 			<AboutSection />
 
 			{projects?.length > 0 ? (
