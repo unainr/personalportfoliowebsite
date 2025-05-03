@@ -6,7 +6,7 @@ import { FaCode, FaLightbulb, FaBrain, FaProjectDiagram } from 'react-icons/fa';
 
 export function AboutSection() {
   return (
-    <section id="about" className="py-24 relative">
+    <section id="about" className="py-16 relative">
       <div className="absolute inset-0  backdrop-blur-lg" />
       <div className="max-w-5xl mx-auto px-4 relative">
         <motion.div
