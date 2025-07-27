@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { ModeToggle } from "./ui/modetoggle";
@@ -7,6 +7,7 @@ import Link from "next/link";
 
 const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false)
 
 	const scrollToSection = (sectionId: string) => {
 		const element = document.getElementById(sectionId);
@@ -19,8 +20,18 @@ const Navbar = () => {
 		}
 	};
 
+	  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
 	return (
-		<nav className="fixed w-full z-30 bg-black/40 backdrop-blur-md border-b border-black">
+		<nav   className={`fixed top-0 z-50 w-full transition-all duration-200 ${
+        isScrolled ? "bg-background/60 backdrop-blur-md" : ""
+      }`}>
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
 					{/* Logo */}

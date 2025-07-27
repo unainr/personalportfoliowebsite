@@ -11,6 +11,7 @@ import Link from "next/link";
 import { ThreeDCardDemo } from "@/components/MainThirdCard";
 import { HeroParallaxDemo } from "@/components/testing/HeroParallaxDemo";
 import { LogoCarouselDemo } from "@/components/testing/IconsMain";
+import { CircularTestimonialsCard } from "@/components/testing/main-testi";
 
 export default async function Home() {
 	const projects = await client.fetch(PROJECT_FETCH_QUERY);
@@ -72,7 +73,8 @@ export default async function Home() {
 
 			<SkillsSection />
 			<Experience />
-			<AnimatedTestimonialsDemo />
+			<CircularTestimonialsCard/>
+			{/* <AnimatedTestimonialsDemo /> */}
 			<ContactForm />
 		</>
 	);
